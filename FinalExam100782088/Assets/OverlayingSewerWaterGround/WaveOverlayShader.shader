@@ -40,7 +40,7 @@ Shader "Custom/WaveOverlayShader"
                         _scrollY *= _Time;
                         //rate of first texture moving 
                         float3 main = (tex2D(_MainTex, IN.uv_MainTex + float2(_scrollX, _scrollY)).rgb);
-                        //rate of first texture moving, *2 so it is different from main tex
+                        //rate of first texture moving, *4 so it is different from main tex
                         float3 over = (tex2D(_OverTex, IN.uv_MainTex + float2(_scrollX * 4.0, _scrollY * 4.0)).rgb);
                         o.Albedo = (main + over) / 2.0;
 

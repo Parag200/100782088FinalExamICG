@@ -48,7 +48,7 @@
 			soft = clamp(soft, 0, _Filter.z);
 			soft = soft * soft * _Filter.w;
 			half contribution = max(soft, brightness - _Filter.x);
-			contribution /= max(brightness, 0.00001);
+			contribution /= max(brightness, 0.0008);
 			return c * contribution;
 		}
 

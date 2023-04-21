@@ -6,7 +6,7 @@ Shader "Custom/BumpShader"
    _myBump("Bump Texture", 2D) = "bump" {}
 
    //slider in inspector to adjust bump 
-   _mySlider("Bump Amount", Range(0,10)) = 1
+   _mySlider("Bump Amount", Range(0,5)) = 0.5
 
 	}
 		SubShader{
