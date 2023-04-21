@@ -13,16 +13,16 @@ public class BloomEffect : MonoBehaviour {
 	public Shader bloomShader;
 
 	[Range(0, 10)]
-	public float intensity = 1;
+	public float intensity = 0f;
 
 	[Range(1, 16)]
-	public int iterations = 4;
+	public int iterations = 0;
 
 	[Range(0, 10)]
-	public float threshold = 1;
+	public float threshold = 0;
 
 	[Range(0, 1)]
-	public float softThreshold = 0.5f;
+	public float softThreshold = 0f;
 
 	public bool debug;
 
@@ -31,7 +31,40 @@ public class BloomEffect : MonoBehaviour {
 	[NonSerialized]
 	Material bloom;
 
-	void OnRenderImage (RenderTexture source, RenderTexture destination) {
+
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Q))
+        {
+			intensity = 0f;
+
+			
+			iterations = 0;
+
+		
+			threshold = 0;
+
+			softThreshold = 0;
+		}
+
+		else if (Input.GetKeyDown(KeyCode.Q))
+		{
+			intensity = 4.44f;
+
+
+			iterations = 6;
+
+
+			threshold = 1;
+
+			softThreshold = 0.55f;
+		}
+	}
+
+
+
+
+    void OnRenderImage (RenderTexture source, RenderTexture destination) {
 		if (bloom == null) {
 			bloom = new Material(bloomShader);
 			bloom.hideFlags = HideFlags.HideAndDontSave;

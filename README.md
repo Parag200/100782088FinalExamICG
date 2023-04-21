@@ -8,6 +8,8 @@ For the brick wall in the background I am using bump mapping with an tile offset
 
 For the moving sewer water based off the gif, there is no wave but looks like 2 textures overlayying each other as the character is moving. We have the Main and OvermainTex as well as 2 ranges ScrollX and ScrollY. Here we have ScrollX and ScrollY multiplied by _Time as the textures will be moving during the game time duration. Next we set a fixed4 value for a and b, each value holding the main and overmaintex. We are adding a float2 with ScrollX and ScrollY, this will have the maintex moving with the time. We do the same for the overmaintex but this time we multiply the ScrollX and ScrollY by 2 so that it has a different rate than the maintex. We do this because if they were both the same rate it would be hard to see both textures moving inside the game. Finally we get the average of the 2 rates by adding them together then dividing by 2.
 
+For the sewer water, I used the same water and water foam from the inclass2 assignment but changed the saturation and hue in photoshop so that it would have a darker and muddy look then bright blue sea water.
+
 **Player Movement**
 
 With the object having a rigidbody, I used the horizontal and vertical input instead of manually typing the code for the WASD. This was done because it was more time efficient and looked neater in code. The horizontal and vertical input were multiplied with the float speed relative to the objects XYZ coordinates. To increase player feel I attached the main camera to the player so when the player moves the camera moves aswell.
