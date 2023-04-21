@@ -27,6 +27,9 @@ When toggling for bloom, we have a private void update function. Inside we have 
 
 The reason why the bloom is on the character is because this can give off an effect of the character getting a power up that can block attacks. Once the player presses Q to block their character can indicate this by havaing that bloom effect turned on. 
 
+**BONUS RimLighting**
+
+Code used from Lecture3, Chanigng the color and strength so that it can match the skateboard and environment of mud.
 
 **REFERENCES**
 
